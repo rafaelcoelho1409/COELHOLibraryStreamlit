@@ -132,7 +132,11 @@ for index, row in filtered_catalog.iterrows():
             st.write(f"**Vendedor:** *{row['seller']}*")
             st.write(f"**Descrição do preço:** *{row['price_description']}*")
             st.divider()
+        st.divider()
+        col1_, col2_ = st.columns(2)
+        with col1_:
             st.write("**Preço com desconto**")
             st.write(f"# :green[R${row['price_discount']:.2f}]")
+        with col2_:
             st.write("**Preço original**")
             st.write(f"# :red[R${row['price']:.2f}]")
