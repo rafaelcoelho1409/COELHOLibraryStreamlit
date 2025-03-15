@@ -1,0 +1,9 @@
+services:
+  coelho-library-streamlit:
+    build: .  # Build the image using the Dockerfile in the current directory
+    ports:
+      - "8501:8501"  # Map port 8501 on the host to port 8501 in the container
+    volumes:
+      - .:/app  # Mount the current directory to /app in the container (for development)
+    environment:
+      - STREAMLIT_SERVER_PORT=8501  # Set the Streamlit server port
